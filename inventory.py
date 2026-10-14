@@ -30,7 +30,9 @@ def unidades_faltantes(inventario):
             fcontador = fcontador + inv["minimo"] - inv["stock"]
     return fcontador
 # 5. El for que muestra una línea por producto
-
+for inv in inventario:
+    print(f"{inv['producto']}: {estado(inv['stock'], inv['minimo'])}") 
 # 6. El print de "A reponer"
-
+print (f"A reponer: {contar_a_reponer(inventario)}")
 # 7. El print de "Unidades faltantes"
+print(f"Unidades faltantes: {unidades_faltantes(inventario)}")
