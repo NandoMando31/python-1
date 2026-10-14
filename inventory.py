@@ -16,9 +16,19 @@ def estado(stock, minimo):
     else:
         return "OK"
 # 3. La función contar_a_reponer(inventario)
-
+def contar_a_reponer(inventario):
+    rcontador =0
+    for inv in inventario:
+        if inv["stock"] < inv["minimo"] :
+            rcontador =  rcontador + 1
+    return rcontador
 # 4. La función unidades_faltantes(inventario)
-
+def unidades_faltantes(inventario):
+    fcontador =0
+    for inv in inventario:
+        if inv["stock"] < inv["minimo"] :
+            fcontador = fcontador + inv["minimo"] - inv["stock"]
+    return fcontador
 # 5. El for que muestra una línea por producto
 
 # 6. El print de "A reponer"
